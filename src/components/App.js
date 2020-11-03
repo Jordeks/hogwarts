@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        <Filter hogs={hogs}/>
+        {/* <Filter hogs={hogs}/> */}
         <PigsList hogs={hogs} />
       </div>
     );
