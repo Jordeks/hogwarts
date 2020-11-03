@@ -26,6 +26,14 @@ class PigsList extends Component {
     })
   }
 
+  sortPigsWeight = () => {
+    let sortedWeight = this.state.filteredPigs
+      .sort((a, b) => a.weight - b.weight)
+    this.setState({
+      filteredPigs: sortedWeight
+    })
+  }
+
   generatePigTiles = () => {
     return this.state.filteredPigs.map((data, i) => {
       return <PigTile key={i} 
@@ -42,6 +50,7 @@ class PigsList extends Component {
       <div>
         <button onClick={this.filterPigs}>Filter Pigs</button>
         <button onClick={this.sortPigsName}>Sort by Name</button>
+        <button onClick={this.sortPigsWeight}>Sort by Weight</button>
         <div className='ui grid container ui cards' >
           {this.generatePigTiles()}
         </div>

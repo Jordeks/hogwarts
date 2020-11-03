@@ -4,4 +4,4 @@
 
 [x] filter the hogs that are greased
 [x] sort the hogs based on name
-[] sort the hogs based on weight
+[x] sort the hogs based on weight
