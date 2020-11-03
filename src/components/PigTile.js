@@ -4,6 +4,7 @@ export default class PigTile extends Component {
 
   state = {
     details: false,
+    showing: true,
   }
 
   imageGetter = () => {
@@ -17,17 +18,27 @@ export default class PigTile extends Component {
     this.state.details === false ? this.setState({ details: true }) : this.setState({ details: false})
   }
 
+  hidePiggie = () => {
+    this.setState({
+      showing: false, 
+      details: false
+    })
+  }
+
   render() {
-    if (this.state.details === false) {
+    if (this.state.showing === false) {
+      return null
+    } else if (this.state.details === false) {
       return (
         <div className='ui eight wide column card'>
         <div className='image' onClick={this.displayDetails}>
           <img src={this.imageGetter()} />
         </div>
         {this.props.name}
+        <button onClick={this.hidePiggie}>Hide Piggie</button>
       </div>
       )
-    } else {
+    } else if (this.state.details === true){
       return (
         <div className='ui eight wide column card'>
         <div className='image' onClick={this.displayDetails}>
@@ -40,8 +51,9 @@ export default class PigTile extends Component {
           <p>Height Medal Achieved: {this.props.heightMedalAchieved}</p>
       </div>
       )
-    }
-  }
+    } 
+  } 
+
 }
 
 
