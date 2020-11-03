@@ -2,6 +2,6 @@
 [X] PigTile - name and picture
 [x] onClick show details 
 
-[] filter the hogs that are greased
-[] sort the hogs based on name
+[x] filter the hogs that are greased
+[x] sort the hogs based on name
 [] sort the hogs based on weight

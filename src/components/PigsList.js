@@ -13,9 +13,16 @@ class PigsList extends Component {
 
   filterPigs = () => {
     let filteredPigs = this.state.pigs.filter(pig => pig.greased === true)
-    console.log(filteredPigs)
     this.setState({
       filteredPigs: filteredPigs
+    })
+  }
+
+  sortPigsName = () => {
+    let sortedNames = this.state.filteredPigs
+    .sort((a, b) => a.name.localeCompare(b.name))
+    this.setState({
+      filterPigs: sortedNames
     })
   }
 
@@ -34,6 +41,7 @@ class PigsList extends Component {
     return (
       <div>
         <button onClick={this.filterPigs}>Filter Pigs</button>
+        <button onClick={this.sortPigsName}>Sort by Name</button>
         <div className='ui grid container ui cards' >
           {this.generatePigTiles()}
         </div>
